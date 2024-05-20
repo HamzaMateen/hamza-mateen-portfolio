@@ -7,13 +7,13 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className='p-2 bg-gray-300 dark:bg-gray-700 rounded-full'
+      className='p-2 rounded-full'
       aria-label='Toggle Dark Mode'
     >
       {
         theme === 'light' ?
           <FaMoon className="text-gray-800" /> :
-          <FaSun className="text-yellow-500" />
+          <FaSun className="text-white text-1xl" />
       }
     </button>
   )

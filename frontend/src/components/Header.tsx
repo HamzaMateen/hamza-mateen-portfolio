@@ -5,8 +5,8 @@ import Logo from './Logo';
 
 const Header: React.FC = () => {
   return (
-    <header className="p-4 bg-gray-100 dark:bg-gray-800 shadow-md flex justify-between items-center">
-      <Logo width={50} height={50} />
+    <header className="p-4 flex justify-between items-center">
+      <Logo width={24} height={24} className="hidden md:block" />
       <NavBar />
       <DarkModeToggle />
     </header>

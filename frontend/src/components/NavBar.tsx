@@ -1,80 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AiOutlineHome, AiOutlineRead, AiOutlineCode, AiOutlineFileText, AiOutlineBulb, AiOutlineIdcard, AiOutlineFile } from 'react-icons/ai';
+
+const menuItems = [
+  { name: 'Home', location: "/", icon: AiOutlineHome },
+  { name: 'Blog', location: "/blog", icon: AiOutlineRead },
+  { name: 'Projects', location: "/projects", icon: AiOutlineCode },
+  { name: 'Archive', location: "/archive", icon: AiOutlineFileText },
+  { name: 'Lectures', location: "/lecture", icon: AiOutlineBulb },
+  { name: 'Tech CV', location: "/tech-cv", icon: AiOutlineIdcard },
+  { name: 'Scripts', location: "/scripts", icon: AiOutlineFile }
+];
 
 const NavBar: React.FC = () => {
+  const iconSize: number = 24;
+
+  const [_selectedIcon, setSelectedIcon] = useState<string | null>(null);
+
   return (
-    <nav className="bg-gray-200 dark:bg-gray-900 p-4 shadow-md">
+    <nav className="rounded-xl">
       <ul className="flex space-x-4">
-        <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? 'font-bold text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'
-            }
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/blog"
-            className={({ isActive }) =>
-              isActive ? 'font-bold text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'
-            }
-          >
-            Blog
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/projects"
-            className={({ isActive }) =>
-              isActive ? 'font-bold text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'
-            }
-          >
-            Projects
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/archive"
-            className={({ isActive }) =>
-              isActive ? 'font-bold text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'
-            }
-          >
-            Archive
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/lecture"
-            className={({ isActive }) =>
-              isActive ? 'font-bold text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'
-            }
-          >
-            Lectures
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/tech-cv"
-            className={({ isActive }) =>
-              isActive ? 'font-bold text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'
-            }
-          >
-            Tech CV
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/scripts"
-            className={({ isActive }) =>
-              isActive ? 'font-bold text-gray-800 dark:text-gray-200' : 'text-gray-800 dark:text-gray-200'
-            }
-          >
-            Scripts
-          </NavLink>
-        </li>
+        {
+          menuItems.map((menuItem, index) => {
+            return (
+              <NavLink
+                to={menuItem.location}
+              >
+                <li
+                  key={index}
+                  onClick={() => setSelectedIcon(menuItem.name)}
+                >
+                  <menuItem.icon size={iconSize} />
+                </li>
+              </NavLink>
+            )
+          })
+        }
       </ul>
     </nav>
   );
