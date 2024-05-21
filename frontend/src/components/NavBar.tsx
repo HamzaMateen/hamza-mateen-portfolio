@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AiOutlineHome, AiOutlineRead, AiOutlineCode, AiOutlineFileText, AiOutlineBulb, AiOutlineIdcard, AiOutlineFile } from 'react-icons/ai';
+import { HouseSimple, Article, Code, BoxArrowDown, UserSound, ReadCvLogo, Terminal } from '@phosphor-icons/react';
+
 
 const menuItems = [
-  { name: 'Home', location: "/", icon: AiOutlineHome },
-  { name: 'Blog', location: "/blog", icon: AiOutlineRead },
-  { name: 'Projects', location: "/projects", icon: AiOutlineCode },
-  { name: 'Archive', location: "/archive", icon: AiOutlineFileText },
-  { name: 'Lectures', location: "/lecture", icon: AiOutlineBulb },
-  { name: 'Tech CV', location: "/tech-cv", icon: AiOutlineIdcard },
-  { name: 'Scripts', location: "/scripts", icon: AiOutlineFile }
+  { name: 'Home', location: "/", icon: HouseSimple },
+  { name: 'Blog', location: "/blog", icon: Article },
+  { name: 'Projects', location: "/projects", icon: Code },
+  { name: 'Archive', location: "/archive", icon: BoxArrowDown },
+  { name: 'Lectures', location: "/lecture", icon: UserSound },
+  { name: 'Tech CV', location: "/tech-cv", icon: ReadCvLogo },
+  { name: 'Scripts', location: "/scripts", icon: Terminal }
 ];
 
 const NavBar: React.FC = () => {

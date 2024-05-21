@@ -6,7 +6,11 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      maxWidth: {
+        '120': '32rem',
+      }
+    },
   },
   plugins: [],
 }

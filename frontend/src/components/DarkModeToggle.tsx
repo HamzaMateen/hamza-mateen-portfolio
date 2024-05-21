@@ -1,8 +1,9 @@
-import { FaMoon, FaSun } from 'react-icons/fa';
 import useTheme from "../hooks/useTheme";
+import { Sun, Moon } from '@phosphor-icons/react';
 
 const DarkModeToggle = () => {
   const { theme, toggleTheme } = useTheme();
+  const iconSize = 24;
 
   return (
     <button
@@ -12,8 +13,8 @@ const DarkModeToggle = () => {
     >
       {
         theme === 'light' ?
-          <FaMoon className="text-gray-800" /> :
-          <FaSun className="text-white text-1xl" />
+          <Moon size={iconSize} /> :
+          <Sun size={iconSize} />
       }
     </button>
   )
